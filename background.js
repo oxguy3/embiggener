@@ -17,91 +17,89 @@ async function loadParserModule(id) {
 function matchTabCondition(tab, condition) {
     assert(condition.instanceType == "declarativeContent.PageStateMatcher");
 
-    var location = document.createElement('a');
-    location.href = tab.url;
-    console.log(location);
+    let url = new URL(tab.url)
 
     if (typeof condition.pageUrl !== 'undefined') {
         if (typeof condition.pageUrl.hostContains !== 'undefined') {
-            if (!location.hostname.includes(condition.pageUrl.hostContains)) {console.log("hostContains");
+            if (!url.hostname.includes(condition.pageUrl.hostContains)) {
                 return false;
             }
         }
         if (typeof condition.pageUrl.hostEquals !== 'undefined') {
-            if (location.hostname != condition.pageUrl.hostEquals) {
+            if (url.hostname != condition.pageUrl.hostEquals) {
                 return false;
             }
         }
         if (typeof condition.pageUrl.hostPrefix !== 'undefined') {
-            if (!location.hostname.startsWith(condition.pageUrl.hostPrefix)) {console.log("hostPrefix");
+            if (!url.hostname.startsWith(condition.pageUrl.hostPrefix)) {
                 return false;
             }
         }
         if (typeof condition.pageUrl.hostSuffix !== 'undefined') {
-            if (!location.hostname.endsWith(condition.pageUrl.hostSuffix)) {console.log("hostSuffix");
+            if (!url.hostname.endsWith(condition.pageUrl.hostSuffix)) {
                 return false;
             }
         }
 
         if (typeof condition.pageUrl.pathContains !== 'undefined') {
-            if (!location.pathname.includes(condition.pageUrl.pathContains)) {
+            if (!url.pathname.includes(condition.pageUrl.pathContains)) {
                 return false;
             }
         }
         if (typeof condition.pageUrl.pathEquals !== 'undefined') {
-            if (location.pathname != condition.pageUrl.pathEquals) {
+            if (url.pathname != condition.pageUrl.pathEquals) {
                 return false;
             }
         }
         if (typeof condition.pageUrl.pathPrefix !== 'undefined') {
-            if (!location.pathname.startsWith(condition.pageUrl.pathPrefix)) {
+            if (!url.pathname.startsWith(condition.pageUrl.pathPrefix)) {
                 return false;
             }
         }
         if (typeof condition.pageUrl.pathSuffix !== 'undefined') {
-            if (!location.pathname.endsWith(condition.pageUrl.pathSuffix)) {
+            if (!url.pathname.endsWith(condition.pageUrl.pathSuffix)) {
                 return false;
             }
         }
 
         if (typeof condition.pageUrl.queryContains !== 'undefined') {
-            if (!location.search.includes(condition.pageUrl.queryContains)) {
+            if (!url.search.includes(condition.pageUrl.queryContains)) {
                 return false;
             }
         }
         if (typeof condition.pageUrl.queryEquals !== 'undefined') {
-            if (location.search != condition.pageUrl.queryEquals) {
+            if (url.search != condition.pageUrl.queryEquals) {
                 return false;
             }
         }
         if (typeof condition.pageUrl.queryPrefix !== 'undefined') {
-            if (!location.search.startsWith(condition.pageUrl.queryPrefix)) {
+            if (!url.search.startsWith(condition.pageUrl.queryPrefix)) {
                 return false;
             }
         }
         if (typeof condition.pageUrl.querySuffix !== 'undefined') {
-            if (!location.search.endsWith(condition.pageUrl.querySuffix)) {
+            if (!url.search.endsWith(condition.pageUrl.querySuffix)) {
                 return false;
             }
         }
 
         if (typeof condition.pageUrl.urlContains !== 'undefined') {
-            if (!location.href.includes(condition.pageUrl.urlContains)) {
+            if (!url.href.includes(condition.pageUrl.urlContains)) {
                 return false;
             }
         }
         if (typeof condition.pageUrl.urlEquals !== 'undefined') {
-            if (location.href != condition.pageUrl.urlEquals) {
+            if (url.href != condition.pageUrl.urlEquals) {
                 return false;
             }
         }
         if (typeof condition.pageUrl.urlPrefix !== 'undefined') {
-            if (!location.href.startsWith(condition.pageUrl.urlPrefix)) {
+            if (!url.href.startsWith(condition.pageUrl.urlPrefix)) {
                 return false;
             }
         }
         if (typeof condition.pageUrl.urlSuffix !== 'undefined') {
-            if (!location.href.endsWith(condition.pageUrl.urlSuffix)) {
+            if (!url.href.endsWith(condition.pageUrl.urlSuffix)) {
                 return false;
             }
         }
@@ -173,7 +171,6 @@ chrome.pageAction.onClicked.addListener(async function(tab) {
     await chrome.declarativeContent.onPageChanged.getRules(undefined, async function(rules) {
         let targetUrl = null;
         for (let rule of rules) {
-            console.log("Checking "+rule.id);
             for (let condition of rule.conditions) {
                 console.log(condition);
                 if (matchTabCondition(tab, condition)) {
@@ -184,9 +181,7 @@ chrome.pageAction.onClicked.addListener(async function(tab) {
                     let parser = new module.default();
 
                     // get the URL from the parser
-                    var location = document.createElement('a');
-                    location.href = tab.url;
-                    targetUrl = parser.getBiggestUrl(location);
+                    targetUrl = parser.getBiggestUrl(new URL(tab.url));
                     if (targetUrl !== null) break;
                 }
             }

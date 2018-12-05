@@ -11,14 +11,14 @@ export default class ArsTechnica extends Parser {
             },
         ];
     }
-    getBiggestUrl(location) {
-        if (location.hostname == 'cdn.arstechnica.net') {
+    getBiggestUrl(url) {
+        if (url.hostname == 'cdn.arstechnica.net') {
             let re = /^(\/wp-content\/uploads\/\d+\/\d+\/.*?)-\d+x\d+(\.\w+)$/g;
-            let result = re.exec(location.pathname);
+            let result = re.exec(url.pathname);
             if (result !== null) {
                 let filePath = result[1];
                 let fileExt = result[2];
-                return "https://"+location.hostname+"/"+filePath+fileExt;
+                return "https://"+url.hostname+"/"+filePath+fileExt;
             }
         }
         return null;

@@ -12,10 +12,10 @@ export default class YouTube extends Parser {
             },
         ];
     }
-    getBiggestUrl(location) {
-        if (location.hostname == "i.ytimg.com") {
+    getBiggestUrl(url) {
+        if (url.hostname == "i.ytimg.com") {
             let re = /^\/vi\/([^"&?/ ]{11})\/\w+.jpg$/ig;
-            let result = re.exec(location.pathname);
+            let result = re.exec(url.pathname);
             if (result !== null) {
                 let videoId = result[1];
                 return "https://i.ytimg.com/vi/"+videoId+"/maxresdefault.jpg";

@@ -11,10 +11,10 @@ export default class Twitter extends Parser {
             },
         ];
     }
-    getBiggestUrl(location) {
-        if (location.hostname == "pbs.twimg.com") {
+    getBiggestUrl(url) {
+        if (url.hostname == "pbs.twimg.com") {
             let re = /^\/media\/([\w\d_]+)\.(\w+)(?:\:\w+)?$/ig;
-            let result = re.exec(location.pathname);
+            let result = re.exec(url.pathname);
             if (result !== null) {
                 let imageId = result[1];
                 let fileExt = result[2];

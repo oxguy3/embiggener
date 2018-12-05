@@ -10,10 +10,10 @@ export default class Bandcamp extends Parser {
             { pageUrl: { hostEquals: 'f5.bcbits.com', pathPrefix: '/img/' } },
         ];
     }
-    getBiggestUrl(location) {
-        if (/f\d\.bcbits\.com/gi.test(location.hostname)) {
+    getBiggestUrl(url) {
+        if (/f\d\.bcbits\.com/gi.test(url.hostname)) {
             let re = /^\/img\/(a?\d{10})_\d+.jpg$/ig;
-            let result = re.exec(location.pathname);
+            let result = re.exec(url.pathname);
             if (result !== null) {
                 let imgId = result[1];
                 return "https://f1.bcbits.com/img/"+imgId+"_0.jpg";

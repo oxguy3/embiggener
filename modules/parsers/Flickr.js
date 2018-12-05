@@ -14,10 +14,10 @@ export default class Flickr extends Parser {
             { pageUrl: { hostEquals: 'farm9.staticflickr.com' } },
         ];
     }
-    getBiggestUrl(location) {
-        if (/farm\d\.staticflickr\.com/gi.test(location.hostname)) {
+    getBiggestUrl(url) {
+        if (/farm\d\.staticflickr\.com/gi.test(url.hostname)) {
             let re = /^\/\d{4}\/(\d{1,11})_[0-9a-f]{10}_\w(?:_d)?.jpg$/ig;
-            let result = re.exec(location.pathname);
+            let result = re.exec(url.pathname);
             if (result !== null) {
                 let photoId = result[1];
                 return "https://flickr.com/photo.gne?id="+photoId;

@@ -2,7 +2,7 @@ class Parser {
     getConditions() {
         return [];
     }
-    getBiggestUrl(location) {
+    getBiggestUrl(url) {
         return null;
     }
 }

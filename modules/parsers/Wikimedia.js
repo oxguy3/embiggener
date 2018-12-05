@@ -6,10 +6,10 @@ export default class Wikimedia extends Parser {
             { pageUrl: { hostEquals: 'upload.wikimedia.org' } },
         ];
     }
-    getBiggestUrl(location) {
-        if (location.hostname == "upload.wikimedia.org") {
+    getBiggestUrl(url) {
+        if (url.hostname == "upload.wikimedia.org") {
             let re = /^\/(\w+)\/(\w+)(?:\/thumb)?\/[0-9a-f]\/[0-9a-f]{2}\/([^#<>\[\]\|\{\}\/]+)(?:\/(?:page\d+-)?\d+px-[^#<>\[\]\|\{\}\/]+)?$/ig;
-            let result = re.exec(location.pathname);
+            let result = re.exec(url.pathname);
             if (result !== null) {
                 let website = result[1];
                 let language = result[2];
