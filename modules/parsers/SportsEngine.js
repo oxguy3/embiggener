@@ -51,7 +51,7 @@ export default class SportsEngine extends Parser {
             // "assets.ngin.com.s3.amazonaws.com", // not actually used in the real world
         ];
         if (hostnames.indexOf(location.hostname) != -1) {
-            let re = /^\/attachments\/photo\/([0-9a-f\/-]{9,}\/.*?)_(?:large|medium|small|thumb)(\.\w+)$/ig;
+            let re = /^\/attachments\/photo\/([0-9a-f\/-]{9,}\/.*?)_(?:large|medium|small|thumb)(\.\w+)$/g;
             let result = re.exec(location.pathname);
             if (result !== null) {
                 let fileIdAndName = result[1];
