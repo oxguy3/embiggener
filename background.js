@@ -129,6 +129,7 @@ chrome.runtime.onInstalled.addListener(async function() {
     let enabledParsers = [
         "Bandcamp",
         "Flickr",
+        "MajorLeagueSoccer",
         "SportsEngine",
         "Twitter",
         "Wikimedia",
