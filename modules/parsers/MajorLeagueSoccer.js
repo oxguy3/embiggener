@@ -1,6 +1,6 @@
 import Parser from '/modules/Parser.js'
 
-export default class SportsEngine extends Parser {
+export default class MajorLeagueSoccer extends Parser {
     getConditions() {
         return [
             {
@@ -13,7 +13,6 @@ export default class SportsEngine extends Parser {
         ];
     }
     getBiggestUrl(location) {
-
         if (location.hostname.endsWith('-mp7static.mlsdigital.net')) {
             let re = /^\/styles\/image_\w+\/s3\/(.*?)$/g;
             let result = re.exec(location.pathname);

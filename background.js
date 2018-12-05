@@ -127,6 +127,7 @@ function matchTabCondition(tab, condition) {
 
 chrome.runtime.onInstalled.addListener(async function() {
     let enabledParsers = [
+        "ArsTechnica",
         "Bandcamp",
         "Flickr",
         "MajorLeagueSoccer",
