@@ -12,9 +12,11 @@ It's also possible to install the latest version of the code in developer mode. 
 
 Embiggener has a knowledge base of the rules that dictate the URLs of images on many popular websites, and uses this information to generate the URL of the highest-quality version of an image. Unlike Google Images reverse search, Embiggener does not rely on web crawling, so it can often find URLs that had never appeared on any public site before.
 
+Depending on the website, this rules can be very simple or very complex. For images from Discord, for example, Embiggener simply removes the `width` and `height` parameters from the URL, causing it to fall back to the maximum width and height. Other sites can be more complex, such as Amazon, which uses several different file organization systems in tandem.
+
 **What sites does Embiggener support?**
 
-New sites are being added regularly, so please check the `modules/parsers` directory for a list of all the sites that are supported. Note that some parsers actually represent a collection of sites:
+Some popular supported sites include Twitter, Amazon, CNN, eBay, Tumblr, YouTube (for video thumbnails), New York Times, Washington Post, and ESPN. There are many many more, and new sites are being added regularly, so please check the `modules/parsers` directory for a complete listing. Note that some parsers in that directoryactually represent a collection of sites:
 
 * Amazon.js supports Amazon.com and IMDb (and possibly other Amazon properties).
 * Gannett.js supports all newspapers in the USA Today Network.
