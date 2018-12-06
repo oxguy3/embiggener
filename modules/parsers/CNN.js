@@ -12,7 +12,7 @@ export default class CNN extends Parser {
         ];
     }
     getBiggestUrl(url) {
-        let re = /^\/cnnnext\/dam\/assets\/([\w-]+?)-(?:small|medium|medium-plus|large|exlarge|super)-\w+(\.\w+)$/g;
+        let re = /^\/cnnnext\/dam\/assets\/([\w-]+?)-(?:small|medium|medium-plus|large|exlarge|super)-\w+?(\.\w+)$/g;
         let result = re.exec(url.pathname);
         if (result !== null) {
             let fileName = result[1];
