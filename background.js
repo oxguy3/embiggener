@@ -131,6 +131,7 @@ chrome.runtime.onInstalled.addListener(async function() {
         "Flickr",
         "MajorLeagueSoccer",
         "SportsEngine",
+        "Tumblr",
         "Twitter",
         "Wikimedia",
         "YouTube",
