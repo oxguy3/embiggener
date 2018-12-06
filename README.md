@@ -35,7 +35,7 @@ However, it might be that your site is difficult or impossible to support. Some 
 * **Wall Street Journal**. WSJ's URL format is very odd, and it seems like different resolutions can have different names (which is not automatable). Further research needed.
 
 ## License
-All code is this repository is available under the MIT License.
+All code in this repository is available under the MIT License.
 
 > MIT License
 >
