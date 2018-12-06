@@ -12,14 +12,12 @@ export default class Twitter extends Parser {
         ];
     }
     getBiggestUrl(url) {
-        if (url.hostname == "pbs.twimg.com") {
-            let re = /^\/media\/([\w\d_]+)\.(\w+)(?:\:\w+)?$/ig;
-            let result = re.exec(url.pathname);
-            if (result !== null) {
-                let imageId = result[1];
-                let fileExt = result[2];
-                return "https://pbs.twimg.com/media/"+imageId+"."+fileExt+":large";
-            }
+        let re = /^\/media\/([\w\d_]+)\.(\w+)(?:\:\w+)?$/ig;
+        let result = re.exec(url.pathname);
+        if (result !== null) {
+            let imageId = result[1];
+            let fileExt = result[2];
+            return "https://pbs.twimg.com/media/"+imageId+"."+fileExt+":large";
         }
         return null;
     }

@@ -13,13 +13,11 @@ export default class MajorLeagueSoccer extends Parser {
         ];
     }
     getBiggestUrl(url) {
-        if (url.hostname.endsWith('-mp7static.mlsdigital.net')) {
-            let re = /^\/styles\/image_\w+\/s3\/(.*?)$/g;
-            let result = re.exec(url.pathname);
-            if (result !== null) {
-                let filePath = result[1];
-                return "https://"+url.hostname+"/"+filePath;
-            }
+        let re = /^\/styles\/image_\w+\/s3\/(.*?)$/g;
+        let result = re.exec(url.pathname);
+        if (result !== null) {
+            let filePath = result[1];
+            return "https://"+url.hostname+"/"+filePath;
         }
         return null;
     }

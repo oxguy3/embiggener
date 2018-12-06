@@ -42,22 +42,12 @@ export default class SportsEngine extends Parser {
         ];
     }
     getBiggestUrl(url) {
-        let hostnames = [
-            "assets.ngin.com",
-            "cdn1.sportngin.com",
-            "cdn2.sportngin.com",
-            "cdn3.sportngin.com",
-            "cdn4.sportngin.com",
-            "assets.ngin.com.s3.amazonaws.com",
-        ];
-        if (hostnames.indexOf(url.hostname) != -1) {
-            let re = /^\/attachments\/photo\/([0-9a-f\/-]{9,}\/.*?)_(?:large|medium|small|thumb)(\.\w+)$/g;
-            let result = re.exec(url.pathname);
-            if (result !== null) {
-                let fileIdAndName = result[1];
-                let fileExt = result[2];
-                return "https://"+url.hostname+"/attachments/photo/"+fileIdAndName+fileExt;
-            }
+        let re = /^\/attachments\/photo\/([0-9a-f\/-]{9,}\/.*?)_(?:large|medium|small|thumb)(\.\w+)$/g;
+        let result = re.exec(url.pathname);
+        if (result !== null) {
+            let fileIdAndName = result[1];
+            let fileExt = result[2];
+            return "https://"+url.hostname+"/attachments/photo/"+fileIdAndName+fileExt;
         }
         return null;
     }
