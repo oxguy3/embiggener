@@ -26,4 +26,4 @@ All code is this repository is available under the MIT License.
 > OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 > SOFTWARE.
 
-The 'scale image' icon is from [Farm-Fresh Web Icons](https://www.fatcow.com/free-icons) by FatCow Web Hosting. It uses the [CC BY 3.0 US](https://creativecommons.org/licenses/by/3.0/us/) license.
+The extension's icon is the ['action-insert-image' icon](http://www.iconarchive.com/show/oxygen-icons-by-oxygen-icons.org/Actions-insert-image-icon.html) from Oxygen Icons, and is free to use under the [GNU Lesser General Public License](https://www.gnu.org/licenses/lgpl-3.0.en.html).
