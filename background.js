@@ -129,6 +129,7 @@ chrome.runtime.onInstalled.addListener(async function() {
         "Bandcamp",
         "Discord",
         "ESPN",
+        "FiveThirtyEight",
         "Flickr",
         "MajorLeagueSoccer",
         "SportsEngine",
@@ -175,9 +176,8 @@ chrome.pageAction.onClicked.addListener(async function(tab) {
         let targetUrl = null;
         for (let rule of rules) {
             for (let condition of rule.conditions) {
-                console.log(condition);
                 if (matchTabCondition(tab, condition)) {
-                    console.log("Matched tab with "+rule.id+" parser")
+                    console.log("Matched "+tab.url+" with "+rule.id+" parser")
 
                     // import the appropriate parser module
                     let module = await loadParserModule(rule.id);
