@@ -131,10 +131,13 @@ chrome.runtime.onInstalled.addListener(async function() {
         "ESPN",
         "FiveThirtyEight",
         "Flickr",
+        "Gannett",
         "MajorLeagueSoccer",
+        "NewYorkTimes",
         "SportsEngine",
         "Tumblr",
         "Twitter",
+        "WashingtonPost",
         "Wikimedia",
         "YouTube",
     ];
