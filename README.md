@@ -1,5 +1,31 @@
 # Embiggener
-Finds the biggest possible version of any image
+Embiggener is a browser extension for finding the biggest possible version of an image. When you are looking at a reduced-size image that exists in better quality, Embiggener's icon will light up. Simply click the icon to be taken to the higher-quality image.
+
+## FAQ
+
+**How does Embiggener work?**
+
+Embiggener has a knowledge base of the rules that dictate the URLs of images on many popular websites, and uses this information to generate the URL of the highest-quality version of an image. Unlike Google Images reverse search, Embiggener does not rely on web crawling, so it can often find URLs that had never appeared on any public site before.
+
+**What sites does Embiggener support?**
+
+New sites are being added regularly, so please check the `modules/parsers` directory for a list of all the sites that are supported. Note that some parsers actually represent a collection of sites:
+
+* Amazon.js supports Amazon.com and IMDb (and possibly other Amazon properties).
+* Gannett.js supports all newspapers in the USA Today Network.
+* SportsEngine.js supports all teams and leagues using the SportsEngine system (for example, the United Soccer League).
+* VoxMedia.js supports all Vox Media properties (The Verge, Vox, SBNation, Eater, Polygon, etc).
+* Wikimedia.js supports all Wikimedia Foundation projects, including Wikipedia, Wikimedia Commons, Wikisource, Wikidata, etc.
+
+**Why don't you support [my favorite site]?**
+
+There are two possibilities: A) I simply haven't gotten to that site yet, or B) there is some technical obstacle with that site. This project is very young, so it's probably A; feel free to [create a new issue](https://github.com/oxguy3/embiggener/issues) and request it (**please** search to see if an issue for that site already exists).
+
+However, it might be that your site is difficult or impossible to support. Some sites use completely random URLs that lack any usable information; some sites use signed URLs which prevent manipulation; and some sites simply don't store their images in high quality. There are a few sites that I know to be resistant to embiggening, including:
+
+* **Reddit**. Reddit's "thumbs" server only stores one size of images, and their "external preview" server uses signed URLs that cannot be edited. Nothing in any of the URLs has any relation to the original Reddit post, so there's not much we can do.
+* **Instagram**. Instagram's URLs look like they might be signed; I wasn't getting anywhere with them (though I didn't try for very long).
+* **Wall Street Journal**. WSJ's URL format is very odd, and it seems like different resolutions can have different names (which is not automatable). Further research needed.
 
 ## License
 All code is this repository is available under the MIT License.
