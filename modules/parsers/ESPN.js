@@ -20,14 +20,29 @@ export default class ESPN extends Parser {
             {
                 pageUrl: {
                     hostEquals: 'artwork.espncdn.com',
-                    pathPrefix: '/programs/'
+                    pathPrefix: '/programs/',
+                    pathContains: '/16x9/small_'
+                }
+            },
+            {
+                pageUrl: {
+                    hostEquals: 'artwork.espncdn.com',
+                    pathPrefix: '/programs/',
+                    pathContains: '/16x9/medium_'
+                }
+            },
+            {
+                pageUrl: {
+                    hostEquals: 'artwork.espncdn.com',
+                    pathPrefix: '/programs/',
+                    pathContains: '/16x9/large_'
                 }
             }
         ];
     }
     getBiggestUrl(url) {
         if (url.hostname == 'artwork.espncdn.com') {
-            let re = /^(\/programs\/[\w-]+\/16x9\/)(?:large|medium|small)_(.*)$/g;
+            let re = /^(\/programs\/[\w-]+\/16x9\/)(?:small|medium|large)_(.*)$/g;
             let result = re.exec(url.pathname);
             if (result !== null) {
                 let fileIdPath = result[1];
