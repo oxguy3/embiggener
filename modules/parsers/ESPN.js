@@ -17,14 +17,30 @@ export default class ESPN extends Parser {
                     queryContains: 'img='
                 }
             },
+            {
+                pageUrl: {
+                    hostEquals: 'artwork.espncdn.com',
+                    pathPrefix: '/programs/'
+                }
+            }
         ];
     }
     getBiggestUrl(url) {
-        let params = url.searchParams;
-        if (params.has('img')) {
-            let newParams = new URLSearchParams()
-            newParams.set('img', params.get('img'));
-            return 'https://'+url.hostname+url.pathname+'?'+newParams.toString();
+        if (url.hostname == 'artwork.espncdn.com') {
+            let re = /^(\/programs\/[\w-]+\/16x9\/)(?:large|medium|small)_(.*)$/g;
+            let result = re.exec(url.pathname);
+            if (result !== null) {
+                let fileIdPath = result[1];
+                let fileName = result[2];
+                return "https://"+url.hostname+fileIdPath+'original_'+fileName;
+            }
+        } else {
+            let params = url.searchParams;
+            if (params.has('img')) {
+                let newParams = new URLSearchParams()
+                newParams.set('img', params.get('img'));
+                return 'https://'+url.hostname+url.pathname+'?'+newParams.toString();
+            }
         }
         return null;
     }
