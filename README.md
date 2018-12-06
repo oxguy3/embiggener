@@ -1,8 +1,8 @@
 # Embiggener
-Embiggener is a browser extension for finding the biggest possible version of an image. When you are looking at a reduced-size image that exists in better quality, Embiggener's icon will light up. Simply click the icon to be taken to the higher-quality image.
+Have you ever been looking at a low-quality image online, and wished you could find the original high-quality version? Embiggener can solve this problem; in just one click, it will take you to the highest quality version of any image hosted on a supported website. When Embiggener sees an image it supports, the icon will light up, letting you know you can click it for a better image.
 
 ## Installation
-For now, this extension only supports Chromium-based browsers (e.g. Google Chrome, Vivaldi, etc). I'll probably add support for other browsers soon. You can find it here on the Chrome Web Store: https://chrome.google.com/webstore/detail/embiggener/acmhbchjmkgmkoghdcdhhdaehkfpkpjc
+For now, this extension only supports Chromium-based browsers (e.g. Google Chrome, Vivaldi, etc). I'll probably add support for other browsers soon. You can find it here on the Chrome Web Store: <https://chrome.google.com/webstore/detail/embiggener/acmhbchjmkgmkoghdcdhhdaehkfpkpjc>. You can also download it as a .crx file from [the releases page](https://github.com/oxguy3/embiggener/releases). (Note: Google Chrome for Windows/Mac no longer allows you to install .crx files. You can only use this .crx file on Chrome for Linux or on other Chromium-based browsers.)
 
 It's also possible to install the latest version of the code in developer mode. Download this repository to your computer (either by clicking the "Download ZIP" button and unzipping, or by using `git clone`). Go to <chrome://extensions/> in your web browser and turn on developer mode with the toggle switch. Click "Load unpacked" and select the directory where you downloaded this repository.
 
@@ -10,9 +10,9 @@ It's also possible to install the latest version of the code in developer mode. 
 
 **How does Embiggener work?**
 
-Embiggener has a knowledge base of the rules that dictate the URLs of images on many popular websites, and uses this information to generate the URL of the highest-quality version of an image. Unlike Google Images reverse search, Embiggener does not rely on web crawling, so it can often find URLs that had never appeared on any public site before.
+Embiggener has a knowledge base of the rules and patterns that dictate the URLs of images on many popular websites, and uses this information to generate the URL of the highest-quality version of an image. Unlike Google Images reverse search, Embiggener does not rely on web crawling, so it can often find URLs that had never appeared on any public site before.
 
-Depending on the website, this rules can be very simple or very complex. For images from Discord, for example, Embiggener simply removes the `width` and `height` parameters from the URL, causing it to fall back to the maximum width and height. Other sites can be more complex, such as Amazon, which uses several different file organization systems in tandem.
+Depending on the website, the rules can be very simple or very complex. For images from Discord, for example, Embiggener simply removes the `width` and `height` parameters from the URL, causing it to fall back to the maximum width and height. Other sites can be more complex, such as Amazon, which uses several different file organization systems in tandem.
 
 **What sites does Embiggener support?**
 
