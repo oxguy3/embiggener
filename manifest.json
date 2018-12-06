@@ -1,7 +1,7 @@
 {
     "name": "Embiggener",
-    "version": "1.0.0",
-    "description": "Finds the biggest possible version of any image",
+    "version": "1.0.1",
+    "description": "Find the biggest possible version of an image",
     "permissions": [
         "activeTab",
         "declarativeContent",
@@ -12,7 +12,7 @@
         "persistent": false
     },
     "page_action": {
-        "default_title": "Make it bigger",
+        "default_title": "Embiggener",
         "default_icon": {
             "16": "images/icon-16.png",
             "32": "images/icon-32.png",
