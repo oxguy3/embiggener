@@ -1,6 +1,11 @@
 # Embiggener
 Embiggener is a browser extension for finding the biggest possible version of an image. When you are looking at a reduced-size image that exists in better quality, Embiggener's icon will light up. Simply click the icon to be taken to the higher-quality image.
 
+## Installation
+For now, this extension only supports Chromium-based browsers (e.g. Google Chrome, Vivaldi, etc). I'll probably add support for other browsers soon.
+
+I haven't put it on the Chrome Web Store yet, so for now, you'll have to install it in developer mode. Download this repository to your computer (either by clicking the "Download ZIP" button and unzipping, or by using `git clone`). Go to <chrome://extensions/> in your web browser and turn on developer mode with the toggle switch. Click "Load unpacked" and select the directory where you downloaded this repository.
+
 ## FAQ
 
 **How does Embiggener work?**
