@@ -139,6 +139,7 @@ chrome.runtime.onInstalled.addListener(async function() {
         "LastFm",
         "MajorLeagueSoccer",
         "MyAnimeList",
+        "NBCNews",
         "NewYorkTimes",
         "NPR",
         "SportsEngine",
