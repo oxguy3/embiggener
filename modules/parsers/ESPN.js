@@ -5,14 +5,7 @@ export default class ESPN extends Parser {
         return [
             {
                 pageUrl: {
-                    hostEquals: 'a.espncdn.com',
-                    pathEquals: '/combiner/i',
-                    queryContains: 'img='
-                }
-            },
-            {
-                pageUrl: {
-                    hostEquals: 'b.espncdn.com',
+                    hostSuffix: '.espncdn.com',
                     pathEquals: '/combiner/i',
                     queryContains: 'img='
                 }
@@ -21,21 +14,7 @@ export default class ESPN extends Parser {
                 pageUrl: {
                     hostEquals: 'artwork.espncdn.com',
                     pathPrefix: '/programs/',
-                    pathContains: '/16x9/small_'
-                }
-            },
-            {
-                pageUrl: {
-                    hostEquals: 'artwork.espncdn.com',
-                    pathPrefix: '/programs/',
-                    pathContains: '/16x9/medium_'
-                }
-            },
-            {
-                pageUrl: {
-                    hostEquals: 'artwork.espncdn.com',
-                    pathPrefix: '/programs/',
-                    pathContains: '/16x9/large_'
+                    pathContains: '/16x9/'
                 }
             }
         ];
