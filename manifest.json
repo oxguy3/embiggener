@@ -1,6 +1,6 @@
 {
     "name": "Embiggener",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Find the biggest possible version of an image",
     "permissions": [
         "activeTab",
