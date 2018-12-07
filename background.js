@@ -203,10 +203,12 @@ chrome.pageAction.onClicked.addListener(async function(tab) {
             if (targetUrl !== null) break;
         }
 
-        if (targetUrl !== null) {
+        if (targetUrl == tab.url) {
+            alert("This image is already as large as it gets.");
+        } else if (targetUrl !== null) {
             chrome.tabs.update(tab.id, { url: targetUrl });
         } else {
-            alert("Sorry, no bigger version is available.");
+            alert("Sorry, Embiggener failed to find a larger image. This is a bug; please post this image URL at <https://github.com/oxguy3/embiggener/issues>.");
         }
 
     });
