@@ -17,7 +17,7 @@ export default class ArsTechnica extends Parser {
         if (result !== null) {
             let filePath = result[1];
             let fileExt = result[2];
-            return "https://"+url.hostname+"/"+filePath+fileExt;
+            return "https://"+url.hostname+filePath+fileExt;
         }
         return null;
     }
