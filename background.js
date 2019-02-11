@@ -132,6 +132,7 @@ chrome.runtime.onInstalled.addListener(async function() {
         "Discord",
         "EBay",
         "ESPN",
+        "Fanatics",
         "FiveThirtyEight",
         "Flickr",
         "FoxNews",
