@@ -137,6 +137,7 @@ chrome.runtime.onInstalled.addListener(async function() {
         "Flickr",
         "FoxNews",
         "Gannett",
+        "InternetArchive",
         "LastFm",
         "MajorLeagueSoccer",
         "MyAnimeList",
