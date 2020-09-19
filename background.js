@@ -130,6 +130,7 @@ chrome.runtime.onInstalled.addListener(async function() {
         "Bandcamp",
         "CNN",
         "Discord",
+        "DukeChronicleArchives",
         "EBay",
         "ESPN",
         "Fanatics",
